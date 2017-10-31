@@ -1,0 +1,5 @@
+Searches labeled 'B' incomplete.  
+Searches labeled 'C' and 'D' contain mutually exclusive data and need to be merged.
+
+SWIN..._145222 contains S. aureus data
+SWIN..._145528 contains s. [pseud]intermedius data
