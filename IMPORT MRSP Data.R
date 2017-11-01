@@ -36,8 +36,7 @@ MecA_MICs_Wide$Source <- factor(
 
 names(MecA_MICs_Wide) <- gsub('MIC', '', names(MecA_MICs_Wide))
 
-ABX_SET1 <- c('AMIKAC',
-              'CHLORA',
+ABX_SET <- c('AMIKAC',
               'CLINDA',
               'DOXYCY',
               'ENROFL',
@@ -46,21 +45,10 @@ ABX_SET1 <- c('AMIKAC',
               'MARBOF',
               'TRISUL'
               )
+MRSP_SET <- MecA_MICs_Wide[,match(c('MecA', 'Source', ABX_SET1),names(MecA_MICs_Wide))]
 
-MRSP_SET <- subset(MecA_MICs_Wide,
-                    select = c(
-                      'MecA',
-                      'Source',
-                      ABX_SET1
-                    ),
-                    !is.na(AMIKAC) &
-                      !is.na(CHLORA) &
-                      !is.na(CLINDA) &
-                      !is.na(DOXYCY) &
-                      !is.na(ENROFL) &
-                      !is.na(ERYTH) &
-                      !is.na(GENTAM) &
-                      !is.na(MARBOF) &
-                      !is.na(TRISUL)
-)
+
+MRSP_SET <- MRSP_SET[apply(MRSP_SET, 1, function(x) {return(all(!is.na(x)))}),]
+
+
 table(MecA_Set1$MecA)
