@@ -45,10 +45,7 @@ ABX_SET <- c('AMIKAC',
               'MARBOF',
               'TRISUL'
               )
-MRSP_SET <- MecA_MICs_Wide[,match(c('MecA', 'Source', ABX_SET1),names(MecA_MICs_Wide))]
+MRSP.data <- MecA_MICs_Wide[,match(c('MecA', 'Source', ABX_SET),names(MecA_MICs_Wide))]
 
 
-MRSP_SET <- MRSP_SET[apply(MRSP_SET, 1, function(x) {return(all(!is.na(x)))}),]
-
-
-table(MecA_Set1$MecA)
+MRSP.data <- MRSP.data[apply(MRSP.data, 1, function(x) {return(all(!is.na(x)))}),]

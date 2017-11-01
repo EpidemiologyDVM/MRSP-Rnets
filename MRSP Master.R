@@ -1,6 +1,6 @@
 #LOAD PACKAGES
 library(RMySQL)
-
+library(rrcov)
 
 #CONNECT TO STAPH DATABASE
 STAPH_DB_CXN <- dbConnect(RMySQL::MySQL(), 
@@ -11,3 +11,5 @@ STAPH_DB_CXN <- dbConnect(RMySQL::MySQL(),
                           )
 
 source('IMPORT MRSP Data.R')
+
+source('ANALYSIS MRSP MANOVA.R')
