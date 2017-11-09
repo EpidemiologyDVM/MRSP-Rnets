@@ -12,3 +12,6 @@ MRSP.MecA.mlm <- lm(MIC.matr ~ MRSP.data$MecA)
 MRSP.MecA.src.mlm <- lm(MIC.matr ~ MRSP.data$MecA + MRSP.data$Source)
 summary(MRSP.MecA.mlm)
 summary(MRSP.MecA.src.mlm)
+
+biotools::boxM(MIC.matr, MRSP.data$MecA)
+biotools::boxM(MIC.matr, MRSP.data$Source)
